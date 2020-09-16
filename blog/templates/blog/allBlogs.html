@@ -32,7 +32,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Bhushan Mendhe</a>
+            <a class="navbar-brand" href="{% url 'home' %}">Bhushan Mendhe</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -40,7 +40,7 @@
                 <div class="navbar-nav ml-auto">
                     <a class="nav-link" href="#">Twitter</a>
                     <a class="nav-link" href="#">Resume</a>
-                    <a class="nav-link active" href="#">Blog</a>
+                    <a class="nav-link active" href="{% url 'allBlogs' %}">Blog</a>
                 </div>
             </div>
         </nav>
@@ -65,7 +65,7 @@
                         <div class="card-body">
                             <h2 class="card-title">{{ blog.title }}</h2>
                             <p class="card-text">{{ blog.summary }}</p>
-                            <a href="#" style="text-decoration: none;">Read More</a>
+                            <a href="{% url 'detail' blog.id %}" style="text-decoration: none;">Read More</a>
                         </div>
                         <div class="card-footer text-muted">
                             Posted on {{ blog.pub_date_pretty }} by
